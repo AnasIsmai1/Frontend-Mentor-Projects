@@ -1,0 +1,177 @@
+/* Presets */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Variables */
+
+:root {
+
+    --primary-font-color: hsl(75, 94%, 57%);
+    --default-font-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(0, 0%, 8%);
+    --card-color: hsl(0, 0%, 12%);
+    --button-color:hsl(0, 0%, 20%);
+    --heavy-font-weight: 700;
+    --mid-font-weight: 600;
+    --light-font-weight:400;
+}
+
+/* Global Variables */
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--default-font-color);
+    font-weight: var(--light-font-weight);
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+}
+
+.container {
+    width: min(380px, 80%);
+    background-color: var(--card-color);
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    gap: 1.8rem;
+    padding: 2.4rem 1.6rem;
+    border-radius: .7rem;
+    font-size: .8rem
+}
+
+p {
+    font-weight: var(--light-font-weight);
+    font-size: .8rem;
+}
+
+/* Content */
+
+.title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: var(--light-font-weight);
+}
+
+.title h2 {
+    font-size: 1.5rem;
+}
+
+.title h4 {
+    font-weight: var(--mid-font-weight);
+    color: var(--primary-font-color);
+    font-size: .9rem;
+}
+
+/* Profile Photo */
+
+picture {
+    display: grid;
+    place-items: center;
+}
+
+img {
+    border-radius: 50%;
+    width: 50%;
+}
+
+/* Buttons */
+
+button {
+    padding: 10px;
+    width: 90%;
+    background-color: var(--button-color);
+    font-weight: var(--heavy-font-weight);
+    border: none;
+    color: var(--default-font-color);
+    border-radius: .5rem;
+    transition-property: background-color, color;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+
+button:hover, button:focus {
+    background-color: var(--primary-font-color);
+    color: var(--card-color);
+    cursor: pointer;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Footer */
+
+.attribution {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+}
+
+footer {
+    display: grid;
+    place-items: center;
+    margin-top: 1em;
+    border-top: solid 1px var(--default-font-color);
+    height: 100px;
+}
+
+/* Media Quereies */
+
+/* 375px */
+
+@media (max-width:375px) {
+
+    button {
+        width: 100%;
+    }
+
+    .btns {
+        gap: 15px;
+    }
+}
