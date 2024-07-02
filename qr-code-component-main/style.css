@@ -1,0 +1,104 @@
+/* Resets */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;    
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Variable */
+
+:root {
+    --font-color: hsl(220, 15%, 55%);
+    --heading-color: hsl(218, 44%, 22%);
+    --card-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(212, 45%, 89%);
+    --heavy-font-weight: 700;
+    --light-font-weight: 500;
+}
+
+/* Global */
+
+body {
+    font-family: "Outfit", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: .875rem;
+    background: var(--bg-color);
+    
+    
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(400px, 90%);
+    margin: 0 auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 1.2rem;
+    background-color: var(--card-color);
+    border-radius: 1.5rem;
+
+    picture {
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-weight: var(--heavy-font-weight);
+        padding: 0 15px;
+        font-size: 1.4rem;
+        color: var(--heading-color);
+    }
+    p {
+        font-weight: var(--light-font-weight);
+        padding: 0 15px;
+        font-size: 1rem;
+        color: var(--font-color);
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width:400px) {
+    .card h1 {
+        font-size: 1.7rem;
+        padding: 0 15px;
+    }
+    .card p {
+        font-size: 1.2rem;
+    }
+}
