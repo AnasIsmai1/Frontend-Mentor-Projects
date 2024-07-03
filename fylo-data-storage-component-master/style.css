@@ -1,0 +1,252 @@
+/* Resets */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;    
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Variables */
+
+:root {
+    --default-font-color: hsl(243, 100%, 93%); 
+    --popup-card-color: hsl(229, 7%, 55%);
+    --card-bg-color: hsl(228, 56%, 26%);
+    --icon-card-color: hsl(229, 57%, 11%);
+    --heavy-font-weight: 700;
+    --light-font-weight: 400;
+}
+
+/* Global */
+
+body {
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    color: var(--default-font-color);
+    font-size: 1rem;
+    background-image: url('images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    top:0px;
+    z-index: 5;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    .card {
+        background-color: var(--card-bg-color);
+        padding: 2rem 2rem;
+        .icons {
+            display: flex;
+            gap: 25px;
+            .icon {
+                border-radius: .5rem;
+                display: flex;
+                padding: .8rem .6rem;
+                justify-content: center;
+                background-color: var(--icon-card-color);
+                width: 45px;
+                height: 45px;
+                /* img {
+                    height: 90%;
+                    width: 70%;
+                } */
+            }
+        }
+    }
+    .card1 {
+        width: min(350px, 90%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+        border-radius: 0.5rem 6rem 0.5rem 0.5rem;
+        height: 220px;
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 45px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .card2 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        border-radius: .5rem;
+        text-align: center;
+        span {
+            font-weight: var(--heavy-font-weight);
+        }
+        .values {
+            font-weight: var(--heavy-font-weight);
+            display: flex;
+            justify-content: space-between;
+        }
+        .popup {
+            width: 215px;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            position: absolute;
+            border-radius: .5rem;
+            color: var(--popup-card-color);
+            text-transform: uppercase;
+            transform: translateX(-50%);
+            background-color:white;
+            padding: 5px 25px;
+            span {
+                color: var(--icon-card-color);
+                font-size: 3rem;
+            }
+            p {
+                width: 100%;
+                font-weight: var(--heavy-font-weight);
+                font-size: .8rem;
+            }
+            .comment {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        
+        }
+    }
+
+}
+
+/* Progress Bar */
+
+.progressBar {
+    overflow: hidden;
+    background-color: #ccc;
+    border-radius: 1rem;
+    background-color: var(--icon-card-color);
+    width: 100%;
+    height: 15px;
+    .progress {
+        position: relative;
+        border-radius: inherit;
+        height: 100%;
+        width: 81.5%;
+        background: linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        .circle {
+            position: absolute;
+            right: 2px;
+            border-radius: 50%;
+            background-color: white;
+            height: 80%;
+            transform: translateY(15%);
+            width: 12.5px;
+        }
+    }
+}
+@media (max-width:899px) {
+    .card2 {
+        width: min(350px, 90%);
+        height: 200px;
+        .popup {
+            bottom: -40px;
+            left: 50%;
+        }
+    }
+}
+@media (min-width:900px) {
+    body {
+    background-color: var(--icon-card-color);
+    background-image: url('images/bg-desktop.png');
+    background-size: contain;
+    /* background-size: 95%; */
+    background-position: 0 120%;
+    }
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    .card1 {
+        height: 4000px;
+    }
+    .card2 {
+        margin-top: 50px;    
+        width: min(600px, 90%);
+        height: 170px;
+        .storage {
+            display: flex;
+            justify-content: flex-start;
+            text-align: start;
+        }
+        .popup {
+            /* bottom: unset; */
+            top: -50px;
+        }
+        span {
+            padding-inline: 5px;
+        }
+        .popup {
+            left: 77.5%
+        }
+        .triangle {
+            height: 0px;
+            width: 0;
+            z-index: -1;
+            /* background-color: yellow; */
+
+            bottom: -20px;
+            right: 0;
+
+            position: absolute;
+            border-top: 30px solid #fff;
+            border-left: 35px solid transparent;
+            border-right: 35px solid #fff;
+            border-bottom: 30px solid transparent;
+
+        }
+    }
+}
