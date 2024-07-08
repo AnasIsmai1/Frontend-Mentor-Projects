@@ -35,6 +35,10 @@ Users should be able to:
 
 ## My process
 
+
+I started with the mobile version of the website and within it I began with the header. I set the necessary variables and styles from the style guide and then began with setting the background color for the header and the main section by wrapping them within a single container which contained their background image which I set through the css rather than the html. I then gave that image a background-color. After setting the image size for the logo i set a general mixin for the button sizings and applied it to all the buttons in the file. After that i genrally styled the main and section with gird displays so that i could easily adjust the layout for both mobile and desktop. I styled the article by giving it a position within the footer. I gave the footer a color and set the pos of the by placing it out of the container as well as setting the copywright and setting it in their appropriate positions by setting the display of the footer. i created 3 stacks and one social div. With the second and third sections i placed the content within a listing removed their list style type and paddings altogether and aligned to them the left. I then adjusted the content within the container with the help of flexbox and jsutified the content by giving them space in between. 
+
+
 ### Built with
 
 - Semantic HTML5 markup
