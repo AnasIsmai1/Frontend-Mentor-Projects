@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Manrope", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  color: hsl(214, 17%, 51%);
+  font-weight: 500;
+}
+
+.container {
+  box-shadow: 0 2px 10px rgba(225, 225, 225, 0.7);
+  display: grid;
+  z-index: 1;
+  position: relative;
+  border-radius: 0.75rem;
+  margin: 0 auto;
+  overflow: clip;
+  width: min(400px, 90%);
+}
+.container .showcase-pic {
+  overflow: hidden;
+  height: 200px;
+}
+.container .showcase-pic img {
+  transform: translateY(-10%);
+  background-image: url("images/drawers.jpg");
+  max-width: 100%;
+  background-size: cover;
+}
+.container .card {
+  padding: 2.5rem 2rem;
+  padding-block-end: 1.5rem;
+  background-color: #fff;
+}
+.container .card h1 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: hsl(217, 19%, 35%);
+}
+.container .card p {
+  font-size: 0.875rem;
+}
+.container .card .author {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+.container .card .author img {
+  border-radius: 50%;
+  width: 40px;
+}
+.container .card .author .name__date {
+  display: flex;
+  flex-direction: column;
+}
+.container .card .author .name__date p {
+  color: hsl(212, 23%, 69%);
+  margin: 0;
+}
+.container .card .author .name__date .name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.825rem;
+  color: hsl(217, 19%, 35%);
+}
+.container .card .share {
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  aspect-ratio: 1/1;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  color: hsl(214, 17%, 51%);
+  position: absolute;
+  bottom: 1.6rem;
+  right: 2rem;
+}
+.container .card .share .share-pic {
+  width: 15px;
+}
+.container .card .share.active {
+  background-color: hsl(214, 17%, 51%);
+}
+.container .card .share.active .share-pic {
+  color: #fff;
+}
+.container .card .popup {
+  width: 100%;
+  padding-block: 15px;
+  padding-inline: 2rem;
+  gap: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: 2;
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: hsl(217, 19%, 35%);
+}
+.container .card .popup img {
+  width: 20px;
+}
+.container .card .popup p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: hsl(212, 23%, 69%);
+  letter-spacing: 0.5em;
+}
+.container .card .popup .shape {
+  visibility: hidden;
+}
+.container .card .popup.active {
+  display: flex;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    z-index: 0;
+    width: min(1000px, 90%);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    overflow: visible;
+  }
+  .container .showcase-pic {
+    border-radius: 0.5rem;
+    display: grid;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  .container .showcase-pic img {
+    transform: translate(0, 0);
+    min-width: 120%;
+  }
+  .container .card {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    z-index: 1;
+    padding: 3rem;
+    padding-block-end: 3rem;
+  }
+  .container .card h1 {
+    font-size: 1.5rem;
+  }
+  .container .card p {
+    font-size: 1.15rem;
+  }
+  .container .card .author img {
+    width: 50px;
+  }
+  .container .card .author .name__date .name {
+    font-size: 1.05rem;
+  }
+  .container .card .author .name__date p {
+    font-size: 1rem;
+  }
+  .container .card .share {
+    width: 50px;
+    bottom: 3rem;
+    right: 3rem;
+    display: grid;
+    place-content: center;
+  }
+  .container .card .share i {
+    width: 30px;
+    transform: scale(120%);
+  }
+  .container .card .popup.active {
+    z-index: 5;
+    width: 250px;
+    bottom: 8rem;
+    right: -3rem;
+    left: unset;
+    padding: 5px;
+    padding-inline: 20px;
+    border-radius: 0.5rem;
+  }
+  .container .card .popup.active .shape {
+    visibility: visible;
+    z-index: -1;
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  .container .card .popup.active .shape .pointer {
+    z-index: -2;
+    transform: rotate(45deg);
+    position: absolute;
+    background-color: hsl(217, 19%, 35%);
+    width: 25px;
+    height: 25px;
+    right: 100px;
+    bottom: -25px;
+  }
+  .container .card .popup.active .shape .pointer p {
+    visibility: hidden;
+  }
+}
