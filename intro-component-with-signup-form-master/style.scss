@@ -1,0 +1,204 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Color 
+
+$primary-red-clr: hsl(0, 100%, 74%);
+$primary-green-clr: hsl(154, 59%, 51%);
+$accent-clr: hsl(248, 32%, 49%);
+$neutral-clr-800: hsl(246, 25%, 77%);
+$neutral-clr-300: hsl(249, 10%, 26%);
+
+// Font Weight
+
+$heavy-font-weight: 700;
+$mid-heavy-font-weight: 600;
+$mid-light-font-weight: 500;
+$light-font-weight: 400; 
+
+@mixin center-vertically {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin basic-style {
+        @include center-vertically();
+        width: min(800px, 90%);
+        margin: 0 auto;
+        box-shadow: 0px 10px 0px rgba(0, 0, 0, .1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-red-clr;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: white;
+    
+}
+
+.bg-img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    background-color: $primary-red-clr;
+    fill: $primary-red-clr;
+    color: $primary-red-clr;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    main {
+        @include basic-style();
+        box-shadow: 0 0 0;
+        margin-block: 50px;
+        @include center-vertically();
+        h1 {
+            margin-block: 0;
+        }
+        
+    }
+    .banner {
+        @include basic-style();
+        background-color: $accent-clr;
+        padding: .25rem 3rem;
+        border-radius: .5rem;
+        margin-block-end: 20px;
+        
+    }
+    form {
+        @include basic-style();
+        color: $neutral-clr-800;
+        font-weight: $mid-heavy-font-weight;
+        background-color: white;
+        border-radius: .5rem;
+        padding: 1.5rem .5rem;
+        gap: 20px;
+        .input-field {
+            display: grid;
+            width: 90%;
+            position: relative;
+            .error {
+                display: none;
+                color: $primary-red-clr;
+                margin-top: 10px;
+                justify-self: end;
+                text-align: right;
+                font-style: italic;
+            }
+            .error.show {
+                display: block;
+            }
+            input {
+                padding: 1rem;
+                font: inherit;
+                width: 100%;
+                border: lighten($neutral-clr-300, 50) solid 1px;
+                border-radius: .5rem;
+            }
+            input:focus {
+                outline: 1px solid black;
+            }
+            .miss {
+                color: $primary-red-clr;
+                border: $primary-red-clr 1px solid;
+            }
+            .miss:focus {
+                outline: 1px solid $primary-red-clr;
+            }
+            .miss::placeholder {
+                color: $primary-red-clr;
+            }
+            img {
+                display: none;
+                top: 10px;
+                right: 20px;
+                position: absolute;
+            }
+        }
+        button {
+            text-transform: uppercase;
+            $button-box-shadow: darken($primary-green-clr, 5);
+            color: white;
+            background-color: $primary-green-clr;
+            box-shadow: 0px 5px 0px $button-box-shadow;
+            width: 90%;
+            padding: 1rem;
+            font: inherit;
+            border: none;
+            border-radius: .5rem;
+        }
+        button:hover {
+            background-color: lighten($primary-green-clr, 20);
+            cursor: pointer;
+        }
+        p {
+            margin: 0;
+            font-size: .75rem; 
+            width: 90%;
+        }
+        span {
+            font-weight: $heavy-font-weight;
+            color: $primary-red-clr;
+        }
+    }
+    footer {
+        a {
+            color: $accent-clr;
+            text-decoration: none;
+        }
+        margin-top: 100px;
+    }
+}
+
+// Media Queries 
+
+@media screen and (min-width: 900px) {
+    @mixin text-align {
+        text-align: left;
+    }
+    .wrapper {
+        width: 80%;
+        margin: auto;
+        font-size: 1.25rem;
+        min-height: 100vh;
+        display: grid;
+        gap: 0px;
+        grid-template-columns: 50% 50%;
+        .Intro {
+            // margin-left: 50px;
+            @include text-align();
+            justify-content: center;
+            h1 {
+                line-height: 1.1em;
+                font-size: 4rem;
+                align-self: flex-start;
+            }
+        }
+        aside {
+            @include center-vertically();
+            justify-content: center;
+        }
+        form {
+            gap: 30px;
+            padding-block: 2.5rem;
+            input {
+                padding: 1.5rem 2rem;
+            }
+            button {
+                padding-block: 1.5rem;
+            }
+        }
+    }
+}
+
