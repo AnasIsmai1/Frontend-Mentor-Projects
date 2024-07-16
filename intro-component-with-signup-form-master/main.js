@@ -4,7 +4,6 @@ const pass = document.querySelector('#password');
 const email = document.querySelector('#email');
 const form  = document.getElementById('form');
 const submit = document.getElementById('submit');
-let Error = false;
 
 function checkInput(name, len) {
     const errId = name.getAttribute('data-id');
@@ -55,11 +54,7 @@ pass.addEventListener('input', function(){
 form.addEventListener('submit', function(e){
     e.preventDefault();
     submit.addEventListener('click', function(){
-        if(Error){
-            // e.preventDefault();
-        }else {
-            
-        }
+    
     })
     
 })
